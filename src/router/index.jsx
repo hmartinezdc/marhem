@@ -4,7 +4,8 @@ import App from "../App";
 import MyInfo from "../pages/Home/MyInfo";
 import PortFolio from "../pages/Portfolio/PortFolio";
 import Contact from "../pages/Contact/Contact";
-import SentEmail from "../pages/sentEmail/sentEmail";
+import SentEmail from "../pages/SentEmail/SentEmail";
+
 
 export const router = createBrowserRouter([
   {
@@ -29,11 +30,11 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "*",
-    element: <p>Pagina no encontrada</p>,
+    path: "/sentEmail",
+    element: <SentEmail />
   },
   {
-    path: "/sentEmail",
-    element: <SentEmail />,
+    path: "*",
+    element: <p>Pagina no encontrada</p>,
   },
 ]);
