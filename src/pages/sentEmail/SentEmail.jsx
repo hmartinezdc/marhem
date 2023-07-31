@@ -23,7 +23,7 @@ const SentEmail = () => {
           </button>
         </div>
         <div className="section__sentEmail--image">
-          <img src={postal} alt="postal" />
+          <img src={postal} alt="postall" />
         </div>
       </section>
       <Footer />
