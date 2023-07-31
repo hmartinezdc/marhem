@@ -7,6 +7,7 @@ import Contact from "../pages/Contact/Contact";
 import SentEmail from "../pages/SentEmail/SentEmail";
 
 
+
 export const router = createBrowserRouter([
   {
     element: <App />,
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/sentEmail",
-    element: <SentEmail />
+    element: <SentEmail />,
   },
   {
     path: "*",
