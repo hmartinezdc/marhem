@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import postal from "../../assets/images/opened-mailbox-with-letter-by-oblik-studio.svg";
-import "./sentEmail.css";
 import Footer from "../../components/Footer/Footer";
+import "./SentEmail.css";
 
 const SentEmail = () => {
   const navigate = useNavigate();
