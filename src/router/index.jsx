@@ -4,7 +4,7 @@ import App from "../App";
 import MyInfo from "../pages/Home/MyInfo";
 import PortFolio from "../pages/Portfolio/PortFolio";
 import Contact from "../pages/Contact/Contact";
-import SentEmail from "../pages/SentEmail/SentEmail";
+import SentEmail from "../pages/sentEmail/SentEmail";
 
 
 
