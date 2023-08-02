@@ -19,8 +19,7 @@ const NavBarBottom = () => {
         block: "start",
       });
     }
-
-    navigate("/portfolio");
+    // navigate("/portfolio");
   };
 
   const toHome = () => {
@@ -64,6 +63,16 @@ const NavBarBottom = () => {
           <NavLink
             className={getClass}
             onClick={scrollToSection}
+            to="/about"
+          >
+            <i className="fa-solid fa-user"></i>
+            <p>Sobre mi</p>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={getClass}
+            onClick={scrollToSection}
             to="/portfolio"
           >
             <i className="fa-solid fa-briefcase"></i>
@@ -72,7 +81,8 @@ const NavBarBottom = () => {
         </li>
         <li>
           <NavLink className={getClass} onClick={toGettingTouch} to="/contact">
-            <i className="fa-solid fa-user"></i>
+            
+            <i className='bx bxs-message-rounded'></i>
             <p>Contacto</p>
           </NavLink>
         </li>

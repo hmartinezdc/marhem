@@ -21,6 +21,7 @@
   gap: 1em;
   padding: 1em;
   border-radius: 0.5em;
+  background-color: var(--bg-color-df-2);
 }
 .portfolio__description {
   flex: 2 0 300px;
@@ -73,9 +74,9 @@
   background-color: var(--dg-3);
 }
 @media (hover: hover) {
-  .portfolio__container_project:hover {
+  /* .portfolio__container_project:hover {
     background-color: var(--bg-color-df-2);
-  }
+  } */
   .buttons__button:hover {
     background-color: #019d91;
   }

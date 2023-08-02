@@ -33,7 +33,8 @@
   }
   .navbarBottom__list .navbarBottom__link--active {
     text-decoration: none;
-    color: var(--text-color-default);
+    /* color: var(--text-color-default); */
+    color: var(--check);
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;

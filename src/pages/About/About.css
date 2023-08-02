@@ -18,6 +18,7 @@
   content: '';
   position: absolute;
   inset: 0;
+  background-color: hsla(164, 100%, 44%, 0.2);
   background-color: var(--bg-color-df-2);
   z-index: -1;
   border-radius: .5em;
@@ -38,6 +39,7 @@
   vertical-align: bottom;
 }
 .container__about_photo_decor {
+  transform: scale(.9);
   position: absolute;
   z-index: -1;
   width: 110%;
