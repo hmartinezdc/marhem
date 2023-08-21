@@ -16,6 +16,49 @@ const PortFolio = () => {
       <section className="portfolio__container">
         <div className="portfolio__container_project">
           <div className="portfolio__image">
+            <img src="https://i.imgur.com/DlFGZa0.png" alt="" />
+          </div>
+          <div className="portfolio__description">
+            <h4>
+              E - commerce 🛒<span> {formattedDate("08/05/2023")}</span>
+            </h4>
+            <p>
+              Aplicación full-stack desarrollada con React y API
+              con NodeJS, tiene log in de usuario, carrito de compras y sección productos comprados.
+            </p>
+            <div className="portfolio__technologist">
+              <span>React</span>
+              <span>Redux</span>
+              <span>Axios</span>
+              <span>CSS</span>
+              <span>PostgreSQL</span>
+              <span>NodeJS</span>
+              <span>Sequelize</span>
+              <span>Express</span>
+            </div>
+            <div className="portfolio__buttons">
+              <a
+                href="https://ecommerce-app-zdc.netlify.app/"
+                className="portfolio__buttons--visit buttons__button"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visitar Web
+              </a>
+              <a
+                href="https://github.com/hmartinezdc/ecommerce-app-frontend.git"
+                className="portfolio__buttons--repo buttons__button"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="portfolio__container_project">
+          <div className="portfolio__image">
             <img src="https://i.imgur.com/uIXajIY.png" alt="" />
           </div>
           <div className="portfolio__description">
@@ -42,25 +85,28 @@ const PortFolio = () => {
               >
                 Visitar Web
               </a>
-              {/* <a
-                href=""
+              <a
+                href="https://github.com/hmartinezdc/pokedex.git"
                 className="portfolio__buttons--repo buttons__button"
                 target="_blank"
                 rel="noreferrer"
               >
-                Repositorio
-              </a> */}
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
             </div>
           </div>
         </div>
+
         <div className="portfolio__container_project">
           <div className="portfolio__image">
             <img src="https://i.imgur.com/MIAMbc6.png" alt="" />
           </div>
           <div className="portfolio__description">
-            <h4>CRUD de Usuarios 👨‍🎓 <span> {formattedDate("05/22/2023")}</span></h4>
+            <h4>
+              CRUD de Usuarios 👨‍🎓 <span> {formattedDate("05/22/2023")}</span>
+            </h4>
             <p>
-              Aplicación web que permite visualizar, crear, editar y eliminar
+              Aplicación web full-stack que permite visualizar, crear, editar y eliminar
               datos de usuarios, ademas, puedes filtrar un usuario por nombre,
               apellido o nombre completo.
             </p>
@@ -69,6 +115,8 @@ const PortFolio = () => {
               <span>useForm</span>
               <span>Axios</span>
               <span>CSS</span>
+              <span>Toastify</span>
+              <span>NodeJS</span>
             </div>
             <div className="portfolio__buttons">
               <a
@@ -77,16 +125,16 @@ const PortFolio = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Visitar Web
+                Visitar web 
               </a>
-              {/* <a
-                href=""
+              <a
+                href="https://github.com/hmartinezdc/CRUD-userslist.git"
                 className="portfolio__buttons--repo buttons__button"
                 target="_blank"
                 rel="noreferrer"
               >
-                Repositorio
-              </a> */}
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
             </div>
           </div>
         </div>
@@ -96,7 +144,10 @@ const PortFolio = () => {
             <img src="https://i.imgur.com/SEavNEt.png" alt="" />
           </div>
           <div className="portfolio__description">
-            <h4>Universo de Rick and Morty 🌎 <span> {formattedDate("05/16/2023")}</span></h4>
+            <h4>
+              Universo de Rick y Morty 🌎{" "}
+              <span> {formattedDate("05/16/2023")}</span>
+            </h4>
             <p>
               Busca personajes de Rick y Morty por universos, puedes ver su
               historia.
@@ -116,14 +167,14 @@ const PortFolio = () => {
               >
                 Visitar Web
               </a>
-              {/* <a
-                href=""
+              <a
+                href="https://github.com/hmartinezdc/Riky-and-Morty-app.git"
                 className="portfolio__buttons--repo buttons__button"
                 target="_blank"
                 rel="noreferrer"
               >
-                Repositorio
-              </a> */}
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
             </div>
           </div>
         </div>
@@ -132,7 +183,10 @@ const PortFolio = () => {
             <img src="https://i.imgur.com/nKYq6pi.png" alt="" />
           </div>
           <div className="portfolio__description">
-            <h4>Clima y horario por Ciudad ⛅ <span> {formattedDate("05/08/2023")}</span></h4>
+            <h4>
+              Clima y horario por Ciudad ⛅{" "}
+              <span> {formattedDate("05/08/2023")}</span>
+            </h4>
             <p>
               Puedes ver el clima en tu ubicación actual, de una ciudad en
               especifica, la hora en tiempo real por cada ciudad y cambiar la
@@ -153,14 +207,14 @@ const PortFolio = () => {
               >
                 Visitar Web
               </a>
-              {/* <a
-                href=""
+              <a
+                href="https://github.com/hmartinezdc/weather-app.git"
                 className="portfolio__buttons--repo buttons__button"
                 target="_blank"
                 rel="noreferrer"
               >
-                Repositorio
-              </a> */}
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
             </div>
           </div>
         </div>
@@ -169,7 +223,10 @@ const PortFolio = () => {
             <img src="https://i.imgur.com/xv6eQ8D.png" alt="" />
           </div>
           <div className="portfolio__description">
-            <h4>Galleta de la Fortuna 🌟 <span> {formattedDate("05/03/2023")}</span></h4>
+            <h4>
+              Galleta de la Fortuna 🌟{" "}
+              <span> {formattedDate("05/03/2023")}</span>
+            </h4>
             <p>
               Frases de la fortuna de forma aleatoria y sincronizada con la
               imagen de fondo.
@@ -187,14 +244,14 @@ const PortFolio = () => {
               >
                 Visitar Web
               </a>
-              {/* <a
-                href=""
+              <a
+                href="https://github.com/hmartinezdc/Galleta-de-la-fortuna.git"
                 className="portfolio__buttons--repo buttons__button"
                 target="_blank"
                 rel="noreferrer"
               >
-                Repositorio
-              </a> */}
+                <i className="fa-brands fa-github"></i><span> Ver código</span> 
+              </a>
             </div>
           </div>
         </div>

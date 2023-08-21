@@ -1,24 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 
 import "./DarkMode.css";
+import { ThemeContext } from "../../context/ThemContext";
 
 const DarkMode = () => {
-
-  // const [isActiveDarkMode, setIsActiveDarkMode] = useState(false);
-  // const haldleActiveDarkMode = () => {
-  //   setIsActiveDarkMode(!isActiveDarkMode);
-  //   document.body.classList.toggle("dark-mode");
-  // };
-  // Estado para almacenar el modo actual
-  const [isActiveDarkMode, setIsActiveDarkMode] = useState(false);
+  const {isActiveDarkMode, setIsActiveDarkMode} = useContext(ThemeContext)
 
   // Función para cambiar el modo y guardar en localStorage
   const handleToggleDarkMode = () => {
     const newMode = !isActiveDarkMode;
     setIsActiveDarkMode(newMode);
-    // document.body.classList.toggle("dark-mode", newMode);
-    document.body.setAttribute('data-theme', newMode? 'light' : 'dark');
-    // Guardar el modo en el localStorage
+    document.body.setAttribute('data-theme', newMode ? 'light' : 'dark');
     localStorage.setItem("darkMode", JSON.stringify(newMode));
   };
 
@@ -28,9 +20,9 @@ const DarkMode = () => {
     if (storedMode !== null) {
       const parsedMode = JSON.parse(storedMode);
       setIsActiveDarkMode(parsedMode);
-      // document.body.classList.toggle("dark-mode", parsedMode);
-      document.body.setAttribute('data-theme', parsedMode? 'light' : 'dark');
+      document.body.setAttribute('data-theme', parsedMode ? 'light' : 'dark');
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

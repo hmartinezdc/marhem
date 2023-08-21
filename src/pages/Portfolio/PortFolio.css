@@ -6,14 +6,12 @@
 .portfolio h3 {
   font-size: 1.35rem;
   text-align: center;
+  color: var(--text-black);
 }
 .portfolio__container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-.portfolio__container_project img {
-  width: 100%;
 }
 .portfolio__container_project {
   display: flex;
@@ -22,7 +20,32 @@
   padding: 1em;
   border-radius: 0.5em;
   background-color: var(--bg-color-df-2);
+  transition: background-color .3s ease-in-out;
 }
+.portfolio__container_project img {
+  width: 100%;
+  border-radius: .5em;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.portfolio__container_project img {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
 .portfolio__description {
   flex: 2 0 300px;
   display: flex;
@@ -34,6 +57,7 @@
 }
 .portfolio__description h4 {
   font-size: 1.35rem;
+  color: var(--text-black);
 }
 .portfolio__description h4 span {
   font-size: 0.875rem;
@@ -57,28 +81,37 @@
 .portfolio__buttons {
   display: flex;
   gap: 1em;
+  margin-top: 15px;
 }
 .buttons__button {
-  background-color: var(--bg-7);
   font-weight: 600;
   padding: 0.5em 1em;
   border-radius: 0.5em;
-  color: white;
+  
   cursor: pointer;
   text-decoration: none;
 }
-/* .portfolio__buttons--visit {
-  background-color: var(--pass);
-} */
+.portfolio__buttons--visit {
+  background-color: var(--bg-7);
+  background-color: var(--check);
+  border: 2px solid  transparent;
+  color: white;
+}
 .portfolio__buttons--repo {
-  background-color: var(--dg-3);
+  background-color: transparent;
+  border: 2px solid  var(--dg-2);
+  color: var(--text-color-default);
 }
 @media (hover: hover) {
   /* .portfolio__container_project:hover {
     background-color: var(--bg-color-df-2);
   } */
-  .buttons__button:hover {
-    background-color: #019d91;
+  .portfolio__buttons--visit:hover {
+    /* background-color: #019d91; */
+    background-color: var(--dg-2);
+  }
+  .portfolio__buttons--repo:hover {
+    color: var(--text-black);
   }
 }
 /* @media (max-width: 768px){
@@ -96,5 +129,11 @@
   }
   .portfolio__description {
     flex: 2 0 250px;
+  }
+  .portfolio__technologist > span {
+    font-size: .875rem;
+  }
+  .buttons__button {
+    font-size: .875rem;
   }
 }

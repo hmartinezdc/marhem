@@ -39,7 +39,7 @@ const Carusel = () => {
         // pagination={true}
         pagination={{
           el: ".swiper__pagination",
-          clickable: true,
+          clickable: false,
         }}
         navigation={true}
         // navigation={{
@@ -51,12 +51,12 @@ const Carusel = () => {
       >
         <SwiperSlide className="swiper__slide swiper__slide--one">
           <div>
-            <img src="https://i.imgur.com/OWTv1KT.png" alt="weather app" />
+            <img src="https://i.imgur.com/e9LoCgF.png" alt="e-commerce" />
           </div>
           <div>
-            <h2>1 Weather app</h2>
+            <h2>E-commerce</h2>
             <a
-              href="https://weather-app-zdc.netlify.app/"
+              href="https://ecommerce-app-zdc.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -64,7 +64,7 @@ const Carusel = () => {
             </a>
           </div>
           <div className="swiper-cap">
-            <p>Visitar sito Web</p>
+            <p>Ver E-commerce</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper__slide swiper__slide--two">
@@ -72,7 +72,7 @@ const Carusel = () => {
             <img src="https://i.imgur.com/7xSFDQn.png" alt="crud users" />
           </div>
           <div>
-            <h2>2 CRUD</h2>
+            <h2>CRUD</h2>
             <a
               href="https://app-crud-userszdc.netlify.app/"
               target="_blank"
@@ -82,7 +82,7 @@ const Carusel = () => {
             </a>
           </div>
           <div className="swiper-cap">
-            <p>Visitar sito Web</p>
+            <p>Ver CRUD</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper__slide swiper__slide--three">
@@ -90,7 +90,7 @@ const Carusel = () => {
             <img src="https://i.imgur.com/8LeNfgd.png" alt="Pokemones" />
           </div>
           <div>
-            <h2>3 Pokemon</h2>
+            <h2>Pokemon</h2>
             <a
               href="https://app-pokedex-zdc.netlify.app/"
               target="_blank"
@@ -100,7 +100,7 @@ const Carusel = () => {
             </a>
           </div>
           <div className="swiper-cap">
-            <p>Visitar sito Web</p>
+            <p>Ver Pokemones</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper__slide swiper__slide--four">
@@ -108,7 +108,7 @@ const Carusel = () => {
             <img src="https://i.imgur.com/R8gvQyL.png" alt="weather" />
           </div>
           <div>
-            <h2>4 Weather app</h2>
+            <h2>Weather app</h2>
             <a
               href="https://weather-app-zdc.netlify.app/"
               target="_blank"
@@ -118,7 +118,7 @@ const Carusel = () => {
             </a>
           </div>
           <div className="swiper-cap">
-            <p>Visitar sito Web</p>
+            <p>Ver Weather app</p>
           </div>
         </SwiperSlide>
       </Swiper>

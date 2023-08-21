@@ -1,14 +1,31 @@
 .nav {
+    position: relative;
+    position: fixed;
     width:100%;
     display: flex;
     justify-content: space-between;
     padding: 1em 3em;
-    position: fixed;
     backdrop-filter: blur(10px);
     z-index: 10;
     background-color: var(--bg-color-navbar);
+    /* background-color: var(--bg-color-2); */
+    /* background-color: var(--dg-2); */
     transition: background-color .3s ease-in-out;
 }
+/* .nav::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: -32%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 25px;
+  background-size: 25px 100%;
+  background-image: linear-gradient(135deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(225deg, var(--bg-color-2) 25%, transparent 25%);
+  background-position: 0 0;
+  transition: linear-gradient .3s ease-in-out;
+} */
 .nav__logo {
     width: 150px;
 }
@@ -32,7 +49,7 @@
     text-decoration: none;
     font-weight: 600;
 }
-.nav__list li:nth-child(3) a {
+.nav__list li:nth-child(4) a {
     color: white;
     text-decoration: none;
 }
@@ -43,6 +60,9 @@
     border-radius: 0.5em;
 }
 @media (hover:hover) {
+    .nav__list li:not(:nth-last-child(-n+2)) a:hover {
+        color: var(--dg-3);
+    }
     .nav__list .nav__list-link--box:hover {
         background-color: #019D91;
     }

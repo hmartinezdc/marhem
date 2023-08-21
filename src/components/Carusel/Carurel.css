@@ -42,12 +42,15 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  left: 0;
+  border-radius: .3em;
+  inset: 0;
+  /* left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  bottom: 0; */
+  background-color: hsla(210, 37.50%, 12.50%, 0.80);
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
 }
@@ -96,10 +99,11 @@
 @media (hover:hover) {
   .swiper-slide-active a:hover {
     background-color: #005baa;
+    background-color: var(--dg-3);
     color: #fff;
   }
   .swiper-slide-active div:nth-child(2):hover ~ .swiper-cap {
-    background-color: hsla(173, 81%, 27%, 0.8);
+    background-color: hsla(210, 37.50%, 12.50%, 0.80);
     transform: translateY(0%);
   }
 }
@@ -107,7 +111,7 @@
   /* display: block; */
   border: 2px solid transparent;
   width: 100%;
-  border-radius: .6rem;
+  border-radius: .5rem;
   aspect-ratio: 10/5.8;
   -o-object-fit: cover;
      object-fit: cover;
@@ -129,24 +133,24 @@
 }
 .swiper-button-prev {
   width: 40px;
-  aspect-ratio: 1/1;
+  height: 40px;
   border-radius: 50%;
   background-color: hsla(0, 0%, 0%, 0.297);
 }
 .swiper-button-next {
   width: 40px;
-  aspect-ratio: 1/1;
+  height: 40px;
   border-radius: 50%;
   background-color: hsla(0, 0%, 0%, 0.297);
 }
 .swiper-button-prev::after {
   color: white;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: .8rem;
+  font-weight: 900;
 }
 .swiper-button-next::after {
   color: white;
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 900;
 }
 

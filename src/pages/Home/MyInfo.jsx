@@ -20,7 +20,7 @@ const MyInfo = () => {
             {/* <i className="fa-solid fa-swatchbook"></i> */}
             <i className="bx bxs-layout"></i>
           </div>
-          <h3>Equipo</h3>
+          <h3>Trabajo en equipo</h3>
           <p>
             Colaboro con otras personas con empatía, madurez emocional y
             profesional.
@@ -37,7 +37,7 @@ const MyInfo = () => {
           </p>
         </div>
       </section>
-      <p>
+      <p className="article__paragraph">
         Puedo unirme a su equipo de manera rápida y eficiente utilizando métodos
         y herramientas de integración continua como Git y Agile.
       </p>

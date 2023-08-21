@@ -5,17 +5,17 @@ import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  const toMyProjects = () => {
-    const navbarElement = document.getElementById("navbar");
-    if (navbarElement) {
-      const displace = navbarElement.offsetTop - 70;
-      globalThis.scrollTo({
-        top: displace,
-        behavior: "smooth",
-      });
-    }
-    navigate("/portfolio");
-  };
+  // const toMyProjects = () => {
+  //   const navbarElement = document.getElementById("navbar");
+  //   if (navbarElement) {
+  //     const displace = navbarElement.offsetTop - 70;
+  //     globalThis.scrollTo({
+  //       top: displace,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  //   navigate("/portfolio");
+  // };
   const toContact = () => {
     const navbarElement = document.getElementById("navbar");
     if (navbarElement) {
@@ -69,11 +69,15 @@ const Home = () => {
           </div>
         </section>
         <section className="header__buttons">
-          <button
-            onClick={toMyProjects}
-            className="header__buttons-button button-primary"
-          >
-            Proyectos
+          <button className="button__about_download">
+            <a
+              href="https://drive.google.com/file/d/1Fm8UXE8UFmHiSINSXv-egzmt4TD3b8FT/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bx bx-download"></i>
+              Descargar CV
+            </a>
           </button>
           <button
             onClick={toContact}

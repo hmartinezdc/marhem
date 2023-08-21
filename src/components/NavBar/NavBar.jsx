@@ -5,6 +5,7 @@ import "./NavBar.css";
 
 const NavBar = () => {
   const navigate = useNavigate()
+  const afterNav = 90;
 
   const toHome = (e) => {
     e.preventDefault();
@@ -15,24 +16,38 @@ const NavBar = () => {
     navigate("/");
   }
 
-  const scrollToSection = (event) => {
+  const toAbout = (event) => {
     event.preventDefault();
 
     const targetId = event.target.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
-    const displace = targetElement.offsetTop - 70; // Ajusta el desplazamiento adicional aquí
+    const displace = targetElement.offsetTop - afterNav; // Ajusta el desplazamiento adicional aquí
 
     globalThis.scrollTo({
       top: displace,
       behavior: 'smooth'
     });
+    navigate("/about");
+  }
+  const toPortfolio  = (event) => {
+    event.preventDefault();
+
+    const targetId = event.target.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    const displace = targetElement.offsetTop - afterNav; // Ajusta el desplazamiento adicional aquí
+
+    globalThis.scrollTo({
+      top: displace,
+      behavior: 'smooth'
+    });
+    navigate("/portfolio");
   }
 
   const toGettingTouch = (e) => {
     e.preventDefault();
     const navbarElement = document.getElementById("navbar");
     if (navbarElement) {
-      const displace = navbarElement.offsetTop - 70;
+      const displace = navbarElement.offsetTop - afterNav;
       globalThis.scrollTo({
         top: displace,
         behavior: "smooth",
@@ -44,14 +59,17 @@ const NavBar = () => {
   return (
     <nav className="nav">
       <a className="nav__logo" href="/">
-        <img src={logo} alt="hemcode" />
+        <img src={logo} alt="logo" />
       </a>
       <ul className="nav__list">
         <li>
           <a onClick={toHome} href="#root">Inicio</a>
         </li>
         <li>
-          <a onClick={scrollToSection} href="#navbar">Navegar</a>
+          <a onClick={toPortfolio} href="#navbar">Proyectos</a>
+        </li>
+        <li>
+          <a onClick={toAbout} href="#navbar">Sobre mí</a>
         </li>
         <li className="nav__list-link--box">
           <a onClick={toGettingTouch}  href="#navbar">Contactar</a>

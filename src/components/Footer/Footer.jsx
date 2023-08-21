@@ -3,7 +3,6 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div></div>
       <section className="footer__social-media">
         <a
           href="https://www.linkedin.com/in/hember-mart%C3%ADnez-de-la-cruz-575ab0148/"

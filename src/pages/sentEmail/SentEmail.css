@@ -37,7 +37,7 @@
   flex: 1 0 259px;
 }
 .section__sentEmail--image img {
-  width: 100%;
+  width: 90%;
 }
 @media (hover: hover) {
   .section__sentEmail--button:hover {

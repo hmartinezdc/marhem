@@ -10,16 +10,19 @@
 }
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
   scroll-behavior: smooth;
 }
 #root {
-  width: 100%;
+  /* width: 100%; */
+  min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  /* background: url(../src/assets/images/header.svg) bottom center / contain no-repeat; */
+  /* background: url(../src/assets/images/wave.svg) bottom center / contain no-repeat; */
 }
 p {
   max-width: 75ch;
@@ -90,16 +93,19 @@ p {
   --gray-12: #030507;
 }
 [data-theme="light"] {
+  --text-black:#030507;
   --text-color-default: #334155;
   --subtext-color: #334155;
   --text-color-2: #334155;
+  --bg-black:#ced4da;
   --bg-color-1: #f1f3f5;
   --bg-color-2: #ced4da;
-  --bg-color-alt2: #f8f9fa;
+  /* --bg-color-alt2: #f8f9fa; */
+  --bg-color-alt2: #ededed;
   --bg-color-navbar: hsla(210, 17%, 98%, 0.8);
-  --bg-color-header: #2422a6;
-  --bg-color-df-2: #f1f3f5;
-  --bg-color-df-2: #ebedee;
+  /* --bg-color-df-2: #f1f3f5;
+  --bg-color-df-2: #ebedee; */
+  --bg-color-df-2: #dee2e6;
   --bg-color-decor: #d3dce5;
   --bg-color-input: #f9fafb;
   --scrollbar: #f0f0f0;
@@ -110,15 +116,16 @@ p {
 }
 
 [data-theme="dark"] {
+  --text-black:#f8f9fa;
   --text-color-default: #e5e7eb;
   --subtext-color: #c1c7cf;
   --text-color-2: #e5e7eb;
+  --bg-black:#0d0f12;
   --bg-color-1: #464658;
   --bg-color-2: #333342;
   --bg-color-alt2: #16191d;
-  --bg-color-navbar: hsla(214, 14%, 10%, 0.8);
+  --bg-color-navbar: hsla(216, 16%, 6%,.8);
   --bg-color-df-2: #212529;
-  --bg-color-header: #272731;
   --bg-color-decor: #868e96;
   --bg-color-input: #2d3034;
   --scrollbar: #333;
@@ -131,19 +138,19 @@ p {
   ::-webkit-scrollbar {
     background-color: var(
       --scrollbar
-    ); /* Puedes ajustar el color según tus preferencias */
+    );
     transition: background-color .3s ease-in-out;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: var(
       --scrollbar-thumb
-    ); /* Puedes ajustar el color según tus preferencias */
+    ); 
     transition: background-color .3s ease-in-out;
   }
 
   ::-webkit-scrollbar-thumb:vertical {
-    border: 2px solid var(--scrollbar-thumb-vertical); /* Puedes ajustar el color según tus preferencias */
+    border: 2px solid var(--scrollbar-thumb-vertical);
     border-radius: 5px;
   }
 }

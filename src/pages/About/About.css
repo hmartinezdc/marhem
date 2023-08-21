@@ -18,10 +18,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: hsla(164, 100%, 44%, 0.2);
+  /* background-color: hsla(164, 100%, 44%, 0.2); */
   background-color: var(--bg-color-df-2);
-  z-index: -1;
   border-radius: .5em;
+  transition: background-color ease-in-out .3s;
+  z-index: -2;
 }
 .container__about_photo_img {
   width: 100%;
@@ -35,21 +36,23 @@
   -o-object-position: center 0;
   object-position: center 0;
   border-radius: 0.5em;
-  /* este código evita que aparezca un borde inferior en las imágenes */
   vertical-align: bottom;
 }
 .container__about_photo_decor {
-  transform: scale(.9);
+  /* transform: scale(.9); */
+  overflow: hidden;
   position: absolute;
+  width: 100%;
+  top: 0;
   z-index: -1;
-  width: 110%;
-  top: -5%;
-  right: -10px;
+  /* top: -5%;
+  right: -10px; */
 }
 .container__about_photo_decor svg {
   width: 100%;
-  color: var(--bg-color-decor);
-  transition: color 0.3s ease-in-out;
+  transform: scale(1.5);
+  /* color: var(--bg-color-decor);
+  transition: color 0.3s ease-in-out; */
 }
 .container__about_text {
   font-weight: 400;
@@ -71,6 +74,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--text-black);
 }
 .container__about_text span {
   display: flex;
@@ -80,28 +84,10 @@
 .container__about_text span img {
   width: 25px;
 }
-.button__about_download {
-  background-color: var(--dg-2);
-  font-weight: 500;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 0.5em;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-.button__about_download a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.button__about_download a i {
-    font-size: 1.3rem;
-}
 .container__about_tech h3 {
   font-size: 1.35rem;
   text-align: center;
+  color: var(--text-black);
 }
 .container__about_tech .tech-image p {
   font-weight: 600;
@@ -145,22 +131,23 @@
   /* border: 1px solid #ced4da; */
   transition: background-color 0.3s ease-in-out;
 }
-@media (hover:hover) {
+/* @media (hover:hover) {
     .button__about_download:hover {
         background-color: var(--dg-3);
       }
-}
+} */
 
 @media (max-width: 992px) {
   .container__about_photo {
     flex: 1 0 185px;
   }
-  .container__about_text p {
+  /* .container__about_text p {
     text-align: center;
-  }
+  } */
   .container__about_text--description {
-    align-items: center;
+    /* align-items: center; */
     gap: 1rem;
+    text-wrap: balance;
   }
   .container__about_text {
     align-items: center;
@@ -171,6 +158,12 @@
 @media (max-width: 768px) {
   .container__about_text {
     order: 1;
+  }
+  .container__about_text p {
+    text-align: center;
+  }
+  .container__about_text--description {
+    align-items: center;
   }
   .container__about_photo {
     flex: 1 0 205px;
@@ -187,10 +180,15 @@
   }
   .container__about_photo_decor {
     position: absolute;
+    overflow: visible;
     z-index: -1;
     width: 60%;
-    top: -6%;
-    right: 20%;
+    top: 0;
+    /* top: -6%; */
+    /* right: 20%; */
+  }
+  .container__about_photo_decor svg {
+    transform: scale(1.5);
   }
 }
 @media (max-width: 576px) {
