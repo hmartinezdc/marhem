@@ -71,7 +71,7 @@ const Home = () => {
         <section className="header__buttons">
           <button className="button__about_download">
             <a
-              href="https://drive.google.com/file/d/1Fm8UXE8UFmHiSINSXv-egzmt4TD3b8FT/view?usp=sharing"
+              href="https://drive.google.com/file/d/1T4QfgSfZY0_-LrsjPyBqdl-WzAmh4I1W/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >

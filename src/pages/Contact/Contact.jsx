@@ -7,22 +7,47 @@ import "./Contact.css";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate();
   const form = useRef();
+  const navigate = useNavigate();
+
+  const sendEmailWithPromise = () => {
+    return new Promise((resolve, reject) => {
+      emailjs
+        .sendForm(
+          "service_xeuoc4m",
+          "template_nm9ix14",
+          form.current,
+          "WQRKO6XiRcfeXfpWm"
+        )
+        .then(resolve)
+        .catch(reject);
+    });
+  };
+
+  const displayToastMessages = () => {
+    const messages = {
+      loading: "Enviando email...",
+      success: "Email enviado con éxito",
+      error: (data) => {
+        return `Estatus ${data.status}: No se puedo enviar el mensaje\nintenta enviar por correo`;
+      },
+    };
+    toast.promise(sendEmailWithPromise(), messages);
+  };
 
   const sendEmail = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
-
+    // console.log(form);
     setIsSubmitting(true);
-    form.current.reset();
 
     let errorOccurred = false;
-    console.log(errorOccurred);
+    // console.log(errorOccurred);
 
     try {
       displayToastMessages();
       await sendEmailWithPromise();
+      form.current.reset();
     } catch (error) {
       console.log(error);
       errorOccurred = true;
@@ -42,30 +67,6 @@ const Contact = () => {
       console.log("Ya se navegó hasta sentEmail");
       console.log(errorOccurred);
     }
-  };
-
-  const sendEmailWithPromise = () => {
-    return new Promise((resolve, reject) => {
-      emailjs
-        .sendForm(
-          "service_xeuoc4m",
-          "template_nm9ix14",
-          form.current,
-          "WQRKO6XiRcfeXfpWm"
-        )
-        .then(resolve)
-        .catch(reject);
-    });
-  };
-  const displayToastMessages = () => {
-    const messages = {
-      loading: "Enviando email...",
-      success: "Email enviado con éxito",
-      error: (data) => {
-        return `Estatus ${data.status}: Error en la petición`
-      },
-    };
-    toast.promise(sendEmailWithPromise(), messages);
   };
 
   return (
@@ -94,9 +95,12 @@ const Contact = () => {
             className="contact__form--inputs"
             placeholder="Email"
             required
-            autoComplete="on"
+            autoComplete="username"
+            aria-invalid="true"
+            aria-errormessage="email-error"
           />
         </label>
+        {/* <div id="email-error"><p>Ingresa una dirección de correo válida</p></div> */}
         <label>
           {/* Su mensaje */}
           <textarea
@@ -136,9 +140,12 @@ const Contact = () => {
           >
             <i className="bx bxl-whatsapp"></i> +51994827810
           </a>
-          <p className="contact__info--social--link">
+          <a
+            href="mailto:andrehp.9308@gmail.com"
+            className="contact__info--social--link"
+          >
             <i className="bx bx-mail-send"></i> andrehp.9308@gmail.com
-          </p>
+          </a>
         </div>
       </div>
     </section>
