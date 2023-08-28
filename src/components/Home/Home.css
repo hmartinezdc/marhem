@@ -8,7 +8,7 @@
   gap: 0.5em;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: url(/header.svg) top left / cover no-repeat  padding-box;
+  background: url('/header.svg') top left / cover no-repeat  padding-box;
   
 }
 /* wrap section */
