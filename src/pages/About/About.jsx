@@ -3,7 +3,7 @@ import verified from "../../assets/icons/verified.svg";
 import "./About.css";
 const About = () => {
   return (
-    <section className="container__about">
+    <section className="container__about" id="about">
       <section className="container__about_photo">
         <div className="container__about_photo_img">
           <img src={myPhoto} alt="" />
@@ -22,7 +22,7 @@ const About = () => {
           </h3>
           <p>
             Mi nombre es Hember Martinez, desarrollador web full-stack e
-            ingeniero Ambiental y Sanitario, tengo experiencia previa en proyectos personales hechos con ReactJS, he experimentando con el código y me ha ayudado a mejorar bastante.
+            ingeniero Ambiental y Sanitario, tengo experiencia previa en proyectos complejos hechos con ReactJS, he experimentando con el código y me ha ayudado a mejorar bastante.
           </p>
           <p>Me distingo por mi creatividad, habilidades en hacer código limpio y escalable, impulsar experiencias de usuario excepcionales y trabajar en equipo</p>
           <p>

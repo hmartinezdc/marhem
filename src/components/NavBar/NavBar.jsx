@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/logo03.svg";
 import DarkMode from "../DarkMode/DarkMode";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const afterNav = 90;
 
   const toHome = (e) => {
@@ -13,7 +13,6 @@ const NavBar = () => {
       top: 0,
       behavior: 'smooth'
     });
-    navigate("/");
   }
 
   const toAbout = (event) => {
@@ -27,7 +26,6 @@ const NavBar = () => {
       top: displace,
       behavior: 'smooth'
     });
-    navigate("/about");
   }
   const toPortfolio  = (event) => {
     event.preventDefault();
@@ -40,12 +38,12 @@ const NavBar = () => {
       top: displace,
       behavior: 'smooth'
     });
-    navigate("/portfolio");
   }
 
   const toGettingTouch = (e) => {
     e.preventDefault();
-    const navbarElement = document.getElementById("navbar");
+    const targetId = event.target.getAttribute('href').substring(1);
+    const navbarElement = document.getElementById(targetId);
     if (navbarElement) {
       const displace = navbarElement.offsetTop - afterNav;
       globalThis.scrollTo({
@@ -53,7 +51,6 @@ const NavBar = () => {
         behavior: "smooth",
       });
     }
-    navigate("/contact");
   };
 
   return (
@@ -66,13 +63,13 @@ const NavBar = () => {
           <a onClick={toHome} href="#root">Inicio</a>
         </li>
         <li>
-          <a onClick={toPortfolio} href="#navbar">Proyectos</a>
+          <a onClick={toAbout} href="#about">Sobre mí</a>
         </li>
         <li>
-          <a onClick={toAbout} href="#navbar">Sobre mí</a>
+          <a onClick={toPortfolio} href="#portfolio">Proyectos</a>
         </li>
         <li className="nav__list-link--box">
-          <a onClick={toGettingTouch}  href="#navbar">Contactar</a>
+          <a onClick={toGettingTouch}  href="#contact">Contactar</a>
         </li>
         <li>
           <DarkMode />

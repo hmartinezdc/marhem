@@ -1,7 +1,8 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+// import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "./context/ThemContext";
-import { flushSync } from "react-dom";
+// import { flushSync } from "react-dom";
 import Home from "./components/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
@@ -9,23 +10,26 @@ import Footer from "./components/Footer/Footer";
 import NavBarBottom from "./components/NavBar/NavBarBottom";
 import { Toaster } from "sonner";
 import "./App.css";
+import About from "./pages/About/About";
+import PortFolio from "./pages/Portfolio/PortFolio";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { isActiveDarkMode } = useContext(ThemeContext)
 
-  const setClassName = ({ isActive }) =>
-    isActive ? "navbar__link navbar__link--active" : "navbar__link";
+  // const setClassName = ({ isActive }) =>
+  //   isActive ? "navbar__link navbar__link--active" : "navbar__link";
 
-  const handleTransition = (e) => {
-    const toValue = e.target.getAttribute("href");
+  // const handleTransition = (e) => {
+  //   const toValue = e.target.getAttribute("href");
 
-    if (!document.startViewTransition) {
-      navigate(toValue);
-      return;
-    }
-    document.startViewTransition(() => flushSync(() => navigate(toValue)));
-  };
+  //   if (!document.startViewTransition) {
+  //     navigate(toValue);
+  //     return;
+  //   }
+  //   document.startViewTransition(() => flushSync(() => navigate(toValue)));
+  // };
 
   return (
     <>
@@ -41,9 +45,9 @@ function App() {
       />
       <NavBar />
       <Home />
-      <nav className="navbar" id="navbar">
+      {/* <nav className="navbar" id="navbar">
         <ul className="navbar__list">
-          {/* <li>
+          <li>
             <NavLink
               className={setClassName}
               to="/"
@@ -51,7 +55,7 @@ function App() {
             >
               Inicio
             </NavLink>
-          </li> */}
+          </li>
           <li>
             <NavLink
               className={setClassName}
@@ -80,9 +84,12 @@ function App() {
             </NavLink>
           </li>
         </ul>
-      </nav>
+      </nav> */}
       <main className="main">
         <Outlet />
+        <About />
+        <PortFolio />
+        <Contact />
       </main>
       <ScrollToTopButton />
       <NavBarBottom />

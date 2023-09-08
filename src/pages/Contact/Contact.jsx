@@ -38,18 +38,16 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
-    // console.log(form);
     setIsSubmitting(true);
 
     let errorOccurred = false;
-    // console.log(errorOccurred);
 
     try {
       displayToastMessages();
+
       await sendEmailWithPromise();
       form.current.reset();
     } catch (error) {
-      console.log(error);
       errorOccurred = true;
       if (error.message)
         toast.error(`${error.name}: ${error.message}`, {
@@ -64,13 +62,11 @@ const Contact = () => {
         navigate("/sentEmail");
       }
       setIsSubmitting(false);
-      console.log("Ya se navegó hasta sentEmail");
-      console.log(errorOccurred);
     }
   };
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <form onSubmit={sendEmail} className="contact__form" ref={form}>
         <div className="contact__logo">
           <img src={logo} alt="" />
@@ -138,7 +134,7 @@ const Contact = () => {
             rel="noreferrer"
             className="contact__info--social--link"
           >
-            <i className="bx bxl-whatsapp"></i> +51994827810
+            <i className="bx bxl-whatsapp"></i> escríbeme al wsp
           </a>
           <a
             href="mailto:andrehp.9308@gmail.com"
