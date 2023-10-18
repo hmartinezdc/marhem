@@ -47,6 +47,8 @@
       }
     }
     .contact__form--textarea {
+      resize: vertical;
+      form-sizing: content; 
       height: 120px;
       padding: 0.5em;
     }

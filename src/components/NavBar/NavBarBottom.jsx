@@ -1,90 +1,86 @@
-import { useNavigate, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./NavBarBottom.css";
 
 const NavBarBottom = () => {
-  const navigate = useNavigate();
 
-  const scrollToSection = () => {
-    // const targetId = event.currentTarget.getAttribute("href");
-    // const targetElement = document.querySelector(targetId);
-    const targetElement = document.getElementById("navbar");
-    if (targetElement) {
-      const offset = 70;
-      const { y } = targetElement.getBoundingClientRect();
-      const scrollPosition = globalThis.scrollY;
-
-      globalThis.scrollTo({
-        top: scrollPosition + y - offset,
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    // navigate("/portfolio");
-  };
+  const afterNav = 90;
+  const [activeLink, setActiveLink] = useState(null);
 
   const toHome = () => {
-    const navbarElement = document.getElementById("root");
-    if (navbarElement) {
-      const displace = navbarElement.offsetTop;
-      globalThis.scrollTo({
-        top: displace,
-        behavior: "smooth",
-      });
-    }
-    navigate("/");
-  };
-
-  const toGettingTouch = () => {
-    const navbarElement = document.getElementById("navbar");
+    const element = "root"
+    const navbarElement = document.getElementById(element);
+    setActiveLink(element)
     if (navbarElement) {
       navbarElement.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
-    navigate("/contact");
   };
 
-  const getClass = ({ isActive }) => {
-    if (isActive) return "navbarBottom__link--active";
-    else return "navbarBottom__link";
+  const navigator = (e) => {
+    e.preventDefault();
+    const anchor = e.currentTarget;
+    const targetId = anchor.getAttribute('href').substring(1);
+    setActiveLink(targetId)
+    
+    const navbarElement = document.getElementById(targetId);
+    if (navbarElement) {
+      const displace = navbarElement.offsetTop - afterNav;
+      globalThis.scrollTo({
+        top: displace,
+        behavior: "smooth",
+      });
+    }
   };
+
+  // const getClass = (linkName) => {
+  //   if (activeLink === linkName) return "navbarBottom__link--active";
+  //   else return "navbarBottom__link";
+  // };
+
+  useEffect(() => {
+    const isActive = () => {
+      setActiveLink('root')
+    }
+    isActive();
+  },[])
 
   return (
     <nav className="navbarBottom">
       <ul className="navbarBottom__list">
         <li>
-          <NavLink className={getClass} onClick={toHome} to="/">
+          <a className={activeLink === 'root'? "navbarBottom__link--active": "navbarBottom__link"} onClick={toHome} href="#root">
             <i className="fa-solid fa-house"></i>
             <p>Inicio</p>
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            className={getClass}
-            onClick={scrollToSection}
-            to="/about"
+          <a
+            className={activeLink === 'about'? "navbarBottom__link--active": "navbarBottom__link"}
+            onClick={navigator}
+            href="#about"
           >
-            <i className="fa-solid fa-user"></i>
-            <p>Sobre mi</p>
-          </NavLink>
+              <i className="fa-solid fa-user"></i>
+              <p>Sobre mi</p>
+          </a>
         </li>
         <li>
-          <NavLink
-            className={getClass}
-            onClick={scrollToSection}
-            to="/portfolio"
+          <a
+            className={activeLink === 'portfolio'? "navbarBottom__link--active": "navbarBottom__link"}
+            href="#portfolio"
+            onClick={navigator}
           >
             <i className="fa-solid fa-briefcase"></i>
             <p>Proyectos</p>
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink className={getClass} onClick={toGettingTouch} to="/contact">
-            
-            <i className='bx bxs-message-rounded'></i>
-            <p>Contacto</p>
-          </NavLink>
+          <a className={activeLink === 'contact'? "navbarBottom__link--active": "navbarBottom__link"}
+             onClick={navigator} href="#contact">
+              <i className='bx bxs-message-rounded'></i>
+              <p>Contacto</p>
+          </a>
         </li>
       </ul>
     </nav>

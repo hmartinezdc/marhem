@@ -42,7 +42,7 @@ const NavBar = () => {
 
   const toGettingTouch = (e) => {
     e.preventDefault();
-    const targetId = event.target.getAttribute('href').substring(1);
+    const targetId = e.target.getAttribute('href').substring(1);
     const navbarElement = document.getElementById(targetId);
     if (navbarElement) {
       const displace = navbarElement.offsetTop - afterNav;

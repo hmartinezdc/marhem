@@ -8,7 +8,7 @@
   background-color: #272731;
   background-color: var(--bg-color-navbar);
   backdrop-filter: blur(3px);
-  z-index: 2;
+  z-index: 100;
   padding: 0.5em 0;
   transform: translateY(100%);
   transition: transform ease-in 0.3s, background-color 0.3s ease-in-out;
@@ -33,7 +33,6 @@
   }
   .navbarBottom__list .navbarBottom__link--active {
     text-decoration: none;
-    /* color: var(--text-color-default); */
     color: var(--check);
     font-size: 1.2rem;
     display: flex;

@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import Carusel from "../Carusel/Carusel";
 import "./Home.css";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   // const toMyProjects = () => {
   //   const navbarElement = document.getElementById("navbar");
@@ -16,15 +14,17 @@ const Home = () => {
   //   }
   //   navigate("/portfolio");
   // };
-  const toContact = () => {
-    const navbarElement = document.getElementById("navbar");
+  const toContact = (e) => {
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href').substring(1);
+    const navbarElement = document.getElementById(targetId);
     if (navbarElement) {
-      navbarElement.scrollIntoView({
+      const displace = navbarElement.offsetTop - 100;
+      globalThis.scrollTo({
+        top: displace,
         behavior: "smooth",
-        block: "start",
       });
     }
-    navigate("/contact");
   };
 
   return (
@@ -69,22 +69,25 @@ const Home = () => {
           </div>
         </section>
         <section className="header__buttons">
-          <button className="button__about_download">
+          <button type='button' className="button__about_download">
             <a
-              href="https://drive.google.com/file/d/1T4QfgSfZY0_-LrsjPyBqdl-WzAmh4I1W/view?usp=sharing"
+              href="https://drive.google.com/file/d/1WmsEYwBWfO2h3uDyxtu2tHPODivZ0R_S/view?usp=sharing"
+              // href="https://drive.google.com/uc?export=download&id=1WmsEYwBWfO2h3uDyxtu2tHPODivZ0R_S"
               target="_blank"
               rel="noopener noreferrer"
+              download
             >
               <i className="bx bx-download"></i>
               Descargar CV
             </a>
           </button>
-          <button
+          <a
             onClick={toContact}
+            href="#contact"
             className="header__buttons-button button-secondary"
           >
             Trabajemos juntos <i className="fa-solid fa-chevron-right"></i>
-          </button>
+          </a>
         </section>
       </section>
       <Carusel className="header_section-swiper" />
